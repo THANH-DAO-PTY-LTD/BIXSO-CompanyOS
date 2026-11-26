@@ -4,9 +4,11 @@ BIXSO Company OS is a local web app for a one-person business. Keep a client req
 
 ## Run the web app
 
-Clone this repository and open its root directory in a terminal. You need Node.js 20 or later and npm. There are no dependencies to install and no account to set up.
+You need Node.js and npm. Node.js 24 is the CI target. There are no dependencies to install and no account to set up. Open the extracted directory from [GitHub Releases](https://github.com/THANH-DAO-PTY-LTD/BIXSO-CompanyOS/releases) or clone the source:
 
 ```sh
+git clone https://github.com/THANH-DAO-PTY-LTD/BIXSO-CompanyOS.git
+cd BIXSO-CompanyOS
 npm start
 ```
 
@@ -46,6 +48,10 @@ node src/cli.js list
 Use the IDs returned by the commands if records already exist. Data is stored in the current directory under `.company-os/records.json`. The handover command records a note, and you send the actual deliverable separately. Keep the data fictional. If an interrupted command leaves `.company-os/write.lock`, first verify no command is writing, then move the lock directory aside before retrying. The last committed records are in `records.json`.
 
 The prototype assumes one job per accepted request and three job statuses. Tell us where this is a poor fit using a fictional example. See [how to contribute](CONTRIBUTING.md) and [sample issues](docs/ISSUE-EXAMPLES.md). A link to the BIXSO Social guides and templates can be added once the library has a public URL.
+
+## Community
+
+[Open an issue](https://github.com/THANH-DAO-PTY-LTD/BIXSO-CompanyOS/issues/new/choose) with a fictional example, or see [how to contribute](CONTRIBUTING.md). Send security reports through the [private reporting channel](SECURITY.md).
 
 ## License
 
