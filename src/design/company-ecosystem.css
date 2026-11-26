@@ -1,0 +1,772 @@
+.company-ecosystem {
+  min-width: 0;
+  padding: 2px 4px 14px;
+  color: #243b31;
+  container-type: inline-size;
+}
+
+.ecosystem-title {
+  max-width: 720px;
+  margin: 0 auto 14px;
+  text-align: center;
+}
+
+.ecosystem-title small,
+.cos-area-breadcrumb {
+  color: #668574;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.ecosystem-title h2 {
+  margin: 5px 0;
+  color: #1f3550;
+  font-size: clamp(24px, 2.4vw, 34px);
+  letter-spacing: -.04em;
+}
+
+.ecosystem-title p {
+  margin: 0 auto;
+  max-width: 560px;
+  color: #6b7b72;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ecosystem-outer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cos-runtime .ecosystem-card {
+  position: relative;
+  min-width: 0;
+  display: grid;
+  justify-items: start;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid #dfe8e1;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #ffffff, #fbfdf9);
+  box-shadow: 0 10px 28px #223b2d08;
+  color: #263a32;
+  text-align: left;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.cos-runtime .ecosystem-card-main {
+  display: contents;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+.cos-runtime .ecosystem-card:hover {
+  transform: translateY(-2px);
+  border-color: #a9c7b5;
+  box-shadow: 0 14px 34px #223b2d12;
+}
+
+.cos-runtime .ecosystem-card:has(.ecosystem-card-main:focus-visible) {
+  outline: 2px solid #2f7b58;
+  outline-offset: 2px;
+}
+
+.cos-runtime .ecosystem-card.selected {
+  border-color: #2f7b58;
+  background: linear-gradient(145deg, #edf8f1, #ffffff 72%);
+  box-shadow: 0 0 0 2px #2f7b5820, 0 16px 40px #1d50340f;
+}
+
+.ecosystem-icon {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  border-radius: 12px;
+  place-items: center;
+  background: linear-gradient(145deg, #ecf7f0, #ffffff);
+  color: #3f8062;
+  box-shadow: inset 0 0 0 1px #d6e6da, 0 7px 14px #263b2d08;
+}
+
+.ecosystem-card-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ecosystem-live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #c8d5ce;
+  box-shadow: 0 0 0 4px #eef3ef, inset 0 0 0 1px #ffffffb8;
+}
+
+.ecosystem-live-dot.is-live {
+  background: #2bb673;
+  box-shadow: 0 0 0 4px #dff3e6, 0 0 16px #2bb67366;
+  animation: ecosystem-live-pulse 1.8s ease-in-out infinite;
+}
+
+.ecosystem-card strong {
+  max-width: 100%;
+  color: #24324f;
+  font-size: 14px;
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+
+.ecosystem-card span,
+.ecosystem-card small {
+  color: #728177;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.ecosystem-card small {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ecosystem-card em {
+  margin-top: 2px;
+  color: #347251;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.ecosystem-status,
+.ecosystem-people {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.ecosystem-status {
+  color: #566f61;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.ecosystem-status svg {
+  flex: none;
+  color: #71947e;
+}
+
+.ecosystem-people {
+  flex-wrap: wrap;
+  margin-top: 1px;
+}
+
+.ecosystem-people i {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 3px 7px;
+  border: 1px solid #dde9df;
+  border-radius: 999px;
+  background: #f7fbf8;
+  color: #61766b;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 750;
+}
+
+.ecosystem-people i:last-child {
+  border-color: #e1daf5;
+  background: #faf8ff;
+  color: #7158a8;
+}
+
+.cos-runtime .ecosystem-overview-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  min-height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #dce9df;
+  border-radius: 11px;
+  background: #ffffffd9;
+  color: #527765;
+  opacity: .82;
+  box-shadow: 0 6px 16px #2038270a;
+}
+
+.cos-runtime .ecosystem-overview-button:hover,
+.cos-runtime .ecosystem-overview-button:focus-visible {
+  opacity: 1;
+  border-color: #91b9a3;
+  background: #eef8f1;
+  color: #2f7b58;
+}
+
+.ecosystem-card--external {
+  min-height: 64px;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-content: center;
+  column-gap: 8px !important;
+  padding: 10px !important;
+  border-radius: 15px !important;
+  box-shadow: 0 7px 20px #223b2d06 !important;
+}
+
+.ecosystem-card--external:nth-child(1) .ecosystem-icon { color: #2f7654; background: linear-gradient(145deg,#e8f7ed,#fff); }
+.ecosystem-card--external:nth-child(2) .ecosystem-icon { color: #7358b6; background: linear-gradient(145deg,#f0ecff,#fff); }
+.ecosystem-card--external:nth-child(3) .ecosystem-icon { color: #7a6a2e; background: linear-gradient(145deg,#fff7df,#fff); }
+.ecosystem-outer--bottom .ecosystem-card--external:nth-child(1) .ecosystem-icon { color: #486f99; background: linear-gradient(145deg,#edf5ff,#fff); }
+.ecosystem-outer--bottom .ecosystem-card--external:nth-child(2) .ecosystem-icon { color: #5f7d68; background: linear-gradient(145deg,#eef7f1,#fff); }
+.ecosystem-outer--bottom .ecosystem-card--external:nth-child(3) .ecosystem-icon { color: #8a6a2c; background: linear-gradient(145deg,#fff5df,#fff); }
+
+.ecosystem-card--external .ecosystem-icon {
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.ecosystem-card--external strong,
+.ecosystem-card--external span {
+  grid-column: 2;
+}
+
+.ecosystem-card--external strong { font-size: 12.5px; }
+.ecosystem-card--external span { font-size: 9.5px; }
+
+.ecosystem-card--area {
+  min-height: 126px;
+  border-color: #e5e3da;
+  padding-right: 48px;
+}
+
+.ecosystem-card--area.is-empty {
+  opacity: 1;
+  filter: saturate(.82);
+}
+
+.ecosystem-card--area.is-empty .ecosystem-icon {
+  background: linear-gradient(145deg, #f3f5f3, #ffffff);
+  color: #9aa79f;
+  box-shadow: inset 0 0 0 1px #e1e6e2;
+}
+
+.ecosystem-card--area.is-empty strong,
+.ecosystem-card--area.is-empty .ecosystem-status,
+.ecosystem-card--area.is-empty small {
+  color: #7f8c85;
+}
+
+.ecosystem-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
+  gap: 12px;
+  min-height: 24px;
+  align-items: center;
+  color: #668574;
+  font-size: 9px;
+  text-align: center;
+}
+
+.ecosystem-links--in span:nth-child(1) { justify-self: start; }
+.ecosystem-links--in span:nth-child(2) { justify-self: center; }
+.ecosystem-links--in span:nth-child(3) { justify-self: end; }
+.ecosystem-links--out span:nth-child(1) { justify-self: start; }
+.ecosystem-links--out span:nth-child(2) { justify-self: center; }
+.ecosystem-links--out span:nth-child(3) { justify-self: end; }
+
+.ecosystem-links span {
+  position: relative;
+  min-width: 0;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid #dfece3;
+  background: linear-gradient(145deg, #f7fbf8, #fff);
+  overflow-wrap: anywhere;
+}
+
+.ecosystem-links span::before,
+.ecosystem-links span::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  opacity: .72;
+}
+
+.ecosystem-links span::before {
+  bottom: 100%;
+  height: 13px;
+  border-left: 1px dashed #93c6a5;
+}
+
+.ecosystem-links span::after {
+  top: -4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #4f9870;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px #4f987066;
+  animation: ecosystem-travel 2s ease-in-out infinite;
+}
+
+.ecosystem-links span:nth-child(2)::after {
+  animation-delay: .35s;
+}
+
+.ecosystem-links span:nth-child(3)::after {
+  animation-delay: .7s;
+}
+
+.ecosystem-boundary {
+  padding: 12px 14px 14px;
+  border: 1px dashed #a9cbb7;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 25% 10%, #dff5e688, transparent 32%),
+    radial-gradient(circle at 80% 85%, #f8edd888, transparent 34%),
+    linear-gradient(145deg, #f1faf3cc, #ffffffd9);
+}
+
+.ecosystem-boundary > header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ecosystem-boundary > header strong {
+  display: block;
+  color: #315543;
+  font-size: 14px;
+}
+
+.ecosystem-boundary > header small {
+  display: block;
+  color: #718077;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.ecosystem-boundary > header em {
+  color: #708178;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.ecosystem-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  gap: 10px;
+}
+
+.ecosystem-flow-map {
+  position: relative;
+  grid-template-columns: minmax(150px, 1fr) minmax(126px, .72fr) minmax(150px, 1fr);
+  grid-template-areas:
+    "growth delivery finance"
+    "care delivery assurance"
+    "operations operations operations";
+  align-items: center;
+  gap: 22px clamp(30px, 5cqw, 54px);
+  min-height: 330px;
+  padding: 18px clamp(14px, 2.5cqw, 26px) 20px;
+  border: 1px solid #dcebe2;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 17% 22%, #e3f5e9b8, transparent 24%),
+    radial-gradient(circle at 50% 50%, #fff5e7a3, transparent 25%),
+    radial-gradient(circle at 84% 24%, #edf4ff9c, transparent 25%),
+    linear-gradient(145deg, #fffffff2, #f8fcf9e8);
+  overflow: hidden;
+}
+
+.ecosystem-flow-map::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 22px;
+  border: 1px solid #e1ebe4;
+  opacity: .72;
+  pointer-events: none;
+}
+
+.ecosystem-flow-map .ecosystem-card--area {
+  position: relative;
+  min-width: 0;
+  min-height: 118px;
+  padding: 14px 42px 13px 15px;
+  gap: 6px;
+  border-color: #dae6dd;
+  border-radius: 20px;
+  background: linear-gradient(150deg, #ffffff, #fafcf9 78%);
+  box-shadow: 0 14px 30px #1f3b2d0d, inset 0 1px 0 #fff;
+  z-index: 2;
+}
+
+.ecosystem-flow-map .ecosystem-card--area.is-active {
+  border-color: #cfe1d5;
+  box-shadow: 0 12px 30px #203b2d0f, inset 0 1px 0 #fff;
+}
+
+.ecosystem-network { position: relative; padding: 0 12px; }
+.ecosystem-connection-gutter { height: 32px; }
+.ecosystem-network-routes { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; overflow: visible; }
+.ecosystem-network-routes path { fill: none; stroke: #91b39f; stroke-width: 1.5; stroke-linejoin: round; transition: opacity .25s, stroke .25s; }
+.ecosystem-network-routes .is-muted { opacity: .22; }
+.ecosystem-network-routes .is-highlighted path { stroke: #3f9b6a; stroke-width: 2; filter: drop-shadow(0 0 3px #3f9b6a33); }
+.ecosystem-network-routes circle { fill: #2fc77f; filter: drop-shadow(0 0 5px #2fc77f78); }
+.cos-runtime .ecosystem-network .ecosystem-card { z-index: 4; border-color: #e0e6e2; background: #fff; }
+.cos-runtime .ecosystem-network .ecosystem-card.selected { border-color: #bccbc2; background: #f6faf7; box-shadow: 0 6px 22px #203b2d10; }
+.ecosystem-network .ecosystem-flow-map .ecosystem-card--area::before,
+.ecosystem-network .ecosystem-flow-map .ecosystem-card--area::after { display: none; }
+.ecosystem-network .ecosystem-links span::before,
+.ecosystem-network .ecosystem-links span::after { display: none; }
+.ecosystem-route-caption { margin: 10px auto 0; max-width: 620px; text-align: center; font-size: 11px; line-height: 1.5; color: #62806e; }
+@container (max-width: 500px) { .ecosystem-network-routes { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ecosystem-network-routes circle { display: none; } }
+
+.ecosystem-card-kicker {
+  color: #789084 !important;
+  font-size: 8px !important;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.ecosystem-flow-map .ecosystem-card--area strong {
+  font-size: 14px;
+}
+
+.ecosystem-flow-map .ecosystem-card--area small {
+  max-width: 88%;
+  color: #64766d;
+  font-size: 10.5px;
+}
+
+.ecosystem-flow-map .ecosystem-card--area .ecosystem-status {
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.ecosystem-flow-map .ecosystem-card--area .ecosystem-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 11px;
+}
+
+.ecosystem-flow-map .ecosystem-card--area .ecosystem-people {
+  gap: 4px;
+}
+
+.ecosystem-flow-map .ecosystem-card--area .ecosystem-people i {
+  min-height: 21px;
+  padding: 2px 6px;
+  font-size: 9px;
+}
+
+.ecosystem-flow-map [data-area-id="growth"] { grid-area: growth; }
+.ecosystem-flow-map [data-area-id="care"] { grid-area: care; }
+.ecosystem-flow-map [data-area-id="delivery"] {
+  grid-area: delivery;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 190px;
+  min-height: 138px;
+  padding-right: 34px;
+  border-color: #d5c9ac;
+  background: linear-gradient(155deg, #fffdf8, #fff9ef);
+  box-shadow: 0 18px 38px #6f54210f, inset 0 1px 0 #fff;
+}
+.ecosystem-flow-map [data-area-id="delivery"] .ecosystem-icon {
+  color: #9a6a24;
+  background: linear-gradient(145deg, #fff2d7, #ffffff);
+  box-shadow: inset 0 0 0 1px #ead7ab, 0 8px 17px #9a6a2412;
+}
+.ecosystem-flow-map [data-area-id="finance"] .ecosystem-icon {
+  color: #2e6f58;
+  background: linear-gradient(145deg, #e9f7ef, #ffffff);
+}
+.ecosystem-flow-map [data-area-id="assurance"] .ecosystem-icon {
+  color: #5f7298;
+  background: linear-gradient(145deg, #eef5ff, #ffffff);
+}
+.ecosystem-flow-map [data-area-id="finance"] { grid-area: finance; }
+.ecosystem-flow-map [data-area-id="assurance"] { grid-area: assurance; }
+.ecosystem-flow-map [data-area-id="operations"] {
+  grid-area: operations;
+  justify-self: center;
+  width: min(100%, 360px);
+}
+
+.ecosystem-flow-map .ecosystem-card--area::before,
+.ecosystem-flow-map .ecosystem-card--area::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2f7b58;
+  box-shadow: 0 0 0 5px #e7f3eb, 0 0 16px #2f7b5838;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.ecosystem-flow-map .ecosystem-card--area::before {
+  left: -7px;
+}
+
+.ecosystem-flow-map .ecosystem-card--area::after {
+  right: -7px;
+}
+
+.ecosystem-flow-map [data-area-id="growth"]::before,
+.ecosystem-flow-map [data-area-id="care"]::before {
+  display: none;
+}
+
+.ecosystem-flow-map [data-area-id="finance"]::after,
+.ecosystem-flow-map [data-area-id="assurance"]::after,
+.ecosystem-flow-map [data-area-id="operations"]::before,
+.ecosystem-flow-map [data-area-id="operations"]::after {
+  display: none;
+}
+
+.ecosystem-flow-map .ecosystem-card--area.is-empty::before,
+.ecosystem-flow-map .ecosystem-card--area.is-empty::after {
+  background: #9aa79f;
+  box-shadow: 0 0 0 6px #edf2ef;
+}
+
+.ecosystem-department-flows {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.ecosystem-department-flow-line {
+  fill: none;
+  stroke: #4d9a70;
+  stroke-width: .34;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .66;
+  filter: drop-shadow(0 0 2px #4d9a702e);
+}
+
+#ecosystem-flow-arrow path {
+  fill: #4d9a70;
+}
+
+.ecosystem-department-flow-token {
+  fill: #34b879;
+  filter: drop-shadow(0 0 3px #29bd7878);
+}
+
+@keyframes ecosystem-live-pulse {
+  0%, 100% { transform: scale(1); opacity: .9; }
+  50% { transform: scale(1.24); opacity: 1; }
+}
+
+.company-ecosystem > footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
+  color: #6b7c72;
+  font-size: 11px;
+}
+
+.company-ecosystem > footer strong {
+  color: #315543;
+}
+
+.company-ecosystem > footer span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border: 1px solid #dfe9e1;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.company-ecosystem > footer i {
+  color: #86a091;
+  font-style: normal;
+}
+
+.cos-area-context {
+  display: grid;
+  gap: 12px;
+}
+
+.cos-area-context button {
+  width: 100%;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.cos-area-context button > span {
+  display: grid;
+  gap: 5px;
+}
+
+.cos-area-context small {
+  display: block;
+}
+
+.cos-company-home:has(.company-ecosystem) {
+  padding: 8px;
+}
+
+.cos-area-breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@keyframes ecosystem-travel {
+  0% {
+    transform: translate(-50%, -11px);
+    opacity: 0;
+  }
+  30%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 13px);
+    opacity: 0;
+  }
+}
+
+@container (max-width: 500px) {
+  .ecosystem-outer,
+  .ecosystem-areas:not(.ecosystem-flow-map) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ecosystem-flow-map {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "growth"
+      "care"
+      "delivery"
+      "finance"
+      "assurance"
+      "operations";
+    min-height: 0;
+    padding: 12px;
+    gap: 12px;
+    background:
+      linear-gradient(90deg, transparent calc(50% - 1px), #cfe2d5 calc(50% - 1px), #cfe2d5 calc(50% + 1px), transparent calc(50% + 1px)),
+      linear-gradient(145deg, #fff, #f7fbf8);
+  }
+
+  .ecosystem-department-flows {
+    display: none;
+  }
+
+  .ecosystem-flow-map .ecosystem-card--area::before,
+  .ecosystem-flow-map .ecosystem-card--area::after {
+    display: none;
+  }
+
+  .ecosystem-outer--top .ecosystem-card--external:nth-child(2),
+  .ecosystem-outer--bottom .ecosystem-card--external:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .ecosystem-boundary > header {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .ecosystem-boundary > header em {
+    grid-column: 1 / -1;
+  }
+}
+
+@container (min-width: 501px) and (max-width: 720px) {
+  .ecosystem-flow-map .ecosystem-card--area {
+    min-height: 108px;
+    padding: 12px 36px 11px 12px;
+  }
+
+  .ecosystem-flow-map .ecosystem-card--area strong { font-size: 12.5px; }
+  .ecosystem-flow-map .ecosystem-card--area small { font-size: 9.5px; }
+  .ecosystem-flow-map .ecosystem-card--area .ecosystem-status { font-size: 9px; }
+  .ecosystem-flow-map .ecosystem-card--area .ecosystem-people i { padding-inline: 4px; font-size: 8px; }
+  .ecosystem-card-kicker { display: none; }
+}
+
+@container (max-width: 480px) {
+  .ecosystem-title h2 {
+    font-size: 24px;
+  }
+
+  .ecosystem-outer,
+  .ecosystem-areas:not(.ecosystem-flow-map) {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-outer--top .ecosystem-card--external:nth-child(2),
+  .ecosystem-outer--bottom .ecosystem-card--external:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .ecosystem-links {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .ecosystem-links span::before,
+  .ecosystem-links span::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-links span::after {
+    animation: none;
+  }
+
+  .ecosystem-department-flow-token { display: none; }
+
+  .cos-runtime .ecosystem-card:hover {
+    transform: none;
+  }
+}
