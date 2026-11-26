@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIXSO Company OS</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand"><span aria-hidden="true">B</span> BIXSO Company OS</div>
+    <a class="secondary" href="/api/export">Download JSON</a>
+  </header>
+  <main>
+    <h1>Work desk</h1>
+    <div class="desk">
+      <section class="panel intake">
+        <h2>New request</h2>
+        <form id="intake">
+          <label>Client or alias<input name="customer" required maxlength="2000"></label>
+          <label>Requested outcome<textarea name="outcome" required maxlength="2000" rows="4"></textarea></label>
+          <button>Save request</button>
+          <button class="secondary" id="example" type="button">Fill in an example</button>
+        </form>
+        <p id="feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section aria-labelledby="records-heading">
+        <h2 id="records-heading">Requests and jobs</h2>
+        <div id="records"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
