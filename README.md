@@ -26,3 +26,5 @@ Run `npm test` and `npm run build` before opening a pull request. See [CONTRIBUT
 ## License
 
 [MIT](LICENSE) · Copyright (c) 2026 Thanh Dao Pty Ltd. [Dependency notices](docs/PROVENANCE.md).
+
+The software is provided under the MIT license. Nothing in that license or in this repository excludes, restricts or modifies any right or remedy you have under the Australian Consumer Law, or any other law, that cannot lawfully be excluded.
