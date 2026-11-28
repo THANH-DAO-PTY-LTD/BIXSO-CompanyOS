@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- CI runs on Node.js 22 and 24 (the supported range in `engines`).
+
 ## 0.2.0-beta.3 · 2026-11-28
 
 - Fix: opening a Flow no longer shows "Activity could not be loaded". The local preview returns an empty activity list in the shape the screen expects.
