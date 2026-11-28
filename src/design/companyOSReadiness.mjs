@@ -8,6 +8,6 @@ export function workSetupIssues({ node = {}, task = {}, hasRecordedWork = false 
   if (!String(task.evidence || '').trim()) issues.push({ id: 'evidence', label: 'Define how the result will be accepted', area: 'Design' });
   if (!String(task.sla || '').trim()) issues.push({ id: 'time', label: 'Set the expected completion time', area: 'Work' });
   const energy = node.operation?.energy_per_run;
-  if (energy == null || energy === '' || !Number.isFinite(Number(energy)) || Number(energy) < 0) issues.push({ id: 'energy', label: 'Confirm task Energy before execution', area: 'Energy' });
+  if (energy == null || energy === '' || !Number.isFinite(Number(energy)) || Number(energy) < 0) issues.push({ id: 'energy', label: 'Confirm task cost before execution', area: 'Cost' });
   return issues;
 }

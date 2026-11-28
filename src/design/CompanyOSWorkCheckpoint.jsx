@@ -8,8 +8,8 @@ export default function CompanyOSWorkCheckpoint({ title, owner, assignment, stat
     <dl>
       <div><dt><UserRound size={15}/>Responsible</dt><dd>{owner}<small>{assignment}</small></dd></div>
       <div><dt><ClipboardCheck size={15}/>Current state</dt><dd>{status}</dd></div>
-      <div><dt><Zap size={15}/>Energy</dt><dd>{energy}<small>No paid execution is connected in this preview.</small></dd></div>
+      <div><dt><Zap size={15}/>Cost</dt><dd>{energy}<small>No paid execution is connected in this preview.</small></dd></div>
       <div><dt><ShieldCheck size={15}/>Result to review</dt><dd>{output || 'Define the expected result before completing this work.'}</dd></div>
-    </dl><p>Use Sela to prepare, review or configure this work. Assignment alone does not run it.</p>
+    </dl><p>Use the assistant to prepare, review or configure this work. Assignment alone does not run it.</p>
   </section>;
 }

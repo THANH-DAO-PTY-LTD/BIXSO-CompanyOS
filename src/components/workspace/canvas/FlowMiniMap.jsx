@@ -1,4 +1,4 @@
-// FlowMiniMap — diagram thu nhỏ 5 ký hiệu cho card template (P3/R4). Dùng chung layoutFlow.
+// FlowMiniMap — a small five-symbol diagram for template cards. Shares layoutFlow.
 import React, { useId, useMemo } from 'react';
 import { layoutFlow } from '@/lib/flowLayout';
 import { edgeGeometry } from '@/lib/flowGeometry';

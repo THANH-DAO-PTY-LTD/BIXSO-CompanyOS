@@ -15,7 +15,7 @@ Open the loopback URL printed in the terminal. On the sample Company, open **Pro
 
 ## Limits of this preview
 
-Use fictional records. The app stores them in the current browser profile and local URL. It has no import, export or backup feature in this preview and does not read earlier CLI JSON. The Sela Designer demo proposes a fixed example graph. It makes no model calls and performs no Work. Keep the development server on loopback.
+Use fictional records. The app stores them in the current browser profile and local URL. It has no import, export or backup feature in this preview and does not read earlier CLI JSON. The Flow Designer demo proposes a fixed example graph. It makes no model calls and performs no Work. Keep the development server on loopback.
 
 ## Try it and help shape it
 
@@ -23,8 +23,31 @@ Use fictional records. The app stores them in the current browser profile and lo
 
 Run `npm test` and `npm run build` before opening a pull request. See [CONTRIBUTING](CONTRIBUTING.md) and the [private security reporting channel](SECURITY.md).
 
+<!-- bixso-os-family:start -->
+## BIXSO OS family
+
+Small, local-first, MIT-licensed tools for running real work, each built from the rules of a BIXSO product.
+
+| Project | What it does |
+| --- | --- |
+| [BIXSO Service OS](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS) (this project) | Run a one-person service business: Company, Flow and Work in a local web app. |
+| [BIXSO Sourcing OS](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Sourcing-OS) | B2B sourcing workflows from RFQ to delivered order, with a receipt for every step. |
+| [BIXSO Consulting OS](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Consulting-OS) | An evidence-first record of a consulting engagement. |
+| [BIXSO Construction OS](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Construction-OS) | An outdoor or landscape job from site survey to handover. |
+| [BIXSO Paperwork OS](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Paperwork-OS) | One shared record of a paperwork matter between a client and their professionals. |
+| [BIXSO Travel OS](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Travel-OS) | Trip plans where every suggestion explains itself, plus traveller-host meetups. |
+
+Release news, questions and ideas: [r/BIXSO](https://www.reddit.com/r/BIXSO/).
+
+## Work with BIXSO
+
+Want this set up for your business, or shaped around how your team actually works? BIXSO provides business workflow advisory and implementation. See [bixso.ai](https://bixso.ai).
+<!-- bixso-os-family:end -->
+
 ## License
 
 [MIT](LICENSE) · Copyright (c) 2026 Thanh Dao Pty Ltd. [Dependency notices](docs/PROVENANCE.md).
 
 The software is provided under the MIT license. Nothing in that license or in this repository excludes, restricts or modifies any right or remedy you have under the Australian Consumer Law, or any other law, that cannot lawfully be excluded.
+
+BIXSO and the BIXSO logo are trademarks of Thanh Dao Pty Ltd. The MIT license covers the code, not the names or logo; see [TRADEMARKS.md](TRADEMARKS.md).

@@ -417,7 +417,7 @@ export default function StudioEditorPage({ providerMode = false, assetKind = 'fl
             <IconBtn onClick={() => setHelpOpen(true)} title="Keyboard shortcuts (?)"><HelpCircle size={15} /></IconBtn>
             <IconBtn onClick={undo} title="Undo (⌘Z)" disabled={!history.length}><Undo2 size={15} /></IconBtn>
             <BarBtn onClick={() => setAiOpen((v) => !v)} tone="#7255D9" active={aiOpen}>
-              <Sparkles size={14} /> Sela Designer · Demo
+              <Sparkles size={14} /> Flow Designer · Demo
             </BarBtn>
             <BarBtn onClick={() => setPreview(true)}><Eye size={14} /> Preview</BarBtn>
             <BarBtn onClick={() => doSave()} disabled={busy === 'save'} tone={AMBER}>
@@ -759,7 +759,7 @@ function StudioStart({ assetKind, patterns, onBlank, onSela, onPattern, onClose 
         <div className="studio-start-primary">
           <button type="button" onClick={onSela}>
             <SelaMark size={38} style={{}} />
-            <span><strong>Design it with Sela</strong><small>Describe the real work in your own words. Sela prepares an editable first draft.</small></span>
+            <span><strong>Design it with the assistant</strong><small>Describe the real work in your own words. The assistant prepares an editable first draft.</small></span>
             <ChevronRight size={17} />
           </button>
         </div>
@@ -785,7 +785,7 @@ function StudioDock({ assetKind, aiOpen, rehearsing, patternsOpen, onSela, onDes
     <div className="studio-bottom-dock" data-canvas-item>
       <button type="button" className={`studio-sela-command${aiOpen ? ' active' : ''}`} onClick={onSela}>
         <SelaMark size={34} style={{}} />
-        <span><strong>Sela</strong><small>{assetKind === 'agent' ? 'Training partner' : 'Process designer'}</small></span>
+        <span><strong>Assistant</strong><small>{assetKind === 'agent' ? 'Training partner' : 'Process designer'}</small></span>
         <Sparkles size={15} />
       </button>
       <span className="studio-dock-divider" />
@@ -817,7 +817,7 @@ function AiPanel({ category, onClose, onApply, draftFn = draftBftAI, contextLabe
     setBusy(true); setErr('');
     try {
       const f = draftFn === draftFlowAI ? await draftFn(text) : await draftFn(text, category);
-      if (!f) throw new Error('Sela did not return a usable draft.');
+      if (!f) throw new Error('The assistant did not return a usable draft.');
       setFlow(f);
     } catch (e) { setErr(e?.message || 'AI is unavailable right now.'); }
     finally { setBusy(false); }
@@ -827,7 +827,7 @@ function AiPanel({ category, onClose, onApply, draftFn = draftBftAI, contextLabe
     <div style={{ padding: 12 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
         <Sparkles size={13} style={{ color: '#A855F7' }} />
-        <h3 style={{ fontSize: 12, fontWeight: 800, color: INK, margin: 0, flex: 1 }}>Sela Designer</h3>
+        <h3 style={{ fontSize: 12, fontWeight: 800, color: INK, margin: 0, flex: 1 }}>Flow Designer</h3>
         <button type="button" onClick={onClose} aria-label="Close AI designer" style={{ background: 'none', border: 'none', cursor: 'pointer', color: MUTED }}>
           <X size={14} />
         </button>

@@ -53,7 +53,7 @@ const SPACE_STORY = [
 const FIRST_RUN_QUESTIONS = [
   'What service do you sell most often?',
   'Which repeatable job should become your first Flow?',
-  'Who must approve the output before Sela sends, charges or publishes anything?',
+  'Who must approve the output before the assistant sends, charges or publishes anything?',
 ];
 const DEFAULT_FREE_FLOW = {
   name: 'Product photography',
@@ -64,7 +64,7 @@ const TEMPLATE_FLOW_BLUEPRINT = [
   { step: 'Prepare', text: 'Draft the quote, reply, checklist or recommendation.' },
   { step: 'Approve', text: 'Human confirms the action before external impact.' },
   { step: 'Deliver', text: 'Work moves into a Work Shell with a clear owner.' },
-  { step: 'Settle', text: 'Invoice, Energy and next follow-up stay visible.' },
+  { step: 'Settle', text: 'Invoice, cost and next follow-up stay visible.' },
 ];
 
 const DEPARTMENT_MODULES = {
@@ -81,7 +81,7 @@ const DEPARTMENT_MODULES = {
   finance: [
     ['leads', 'Enquiries & quotes', 'Quote requests and pricing decisions'],
     ['invoices', 'Invoices', 'Invoices, receipts and payment status'],
-    ['billing', 'Energy & billing', 'Energy use and operating costs'],
+    ['billing', 'Costs & billing', 'Usage and operating costs'],
   ],
   growth: [
     ['listings', 'My services & listings', 'Published offers and service pages'],
@@ -91,7 +91,7 @@ const DEPARTMENT_MODULES = {
   assurance: [
     ['contracts', 'Contracts', 'Agreements, insurance and evidence'],
     ['settings', 'Settings', 'Business rules and approval boundaries'],
-    ['billing', 'Energy & billing', 'Cost controls before work is assigned'],
+    ['billing', 'Costs & billing', 'Cost controls before work is assigned'],
   ],
   operations: [
     ['jobs', 'Jobs', 'Unclassified work'],
@@ -104,11 +104,11 @@ const DEPARTMENT_PROFILES = {
     mission: 'Turn customer questions into clear requests, replies and follow-up without losing the relationship history.',
     input: 'New enquiries, customer replies, service notes and feedback.',
     output: 'Qualified customer needs, follow-up messages and jobs ready for Delivery.',
-    control: 'Sela may draft replies, but a Human approves anything sent to a customer.',
+    control: 'The assistant may draft replies, but a Human approves anything sent to a customer.',
     next: 'Review the care rhythm, then open the Flow route that turns enquiries into customer work.',
     metrics: [['2h', 'Target reply'], ['2', 'Flow routes'], ['3', 'Modules']],
     activity: [
-      ['message', 'Today · 09:12', 'New enquiry triaged', 'Sela grouped a customer request with the existing relationship history.'],
+      ['message', 'Today · 09:12', 'New enquiry triaged', 'The assistant grouped a customer request with the existing relationship history.'],
       ['flow', 'Today · 09:20', 'Follow-up rhythm reviewed', 'Customer follow-up can draft the next helpful message after a completed job.'],
       ['check', 'Next', 'Needs owner decision', 'Approve whether this department starts from the care Flow or a new enquiry Flow.'],
     ],
@@ -129,15 +129,15 @@ const DEPARTMENT_PROFILES = {
   },
   finance: {
     owner: 'Finance owner',
-    mission: 'Keep quotes, invoices, payments and Energy visible before work is closed.',
+    mission: 'Keep quotes, invoices, payments and costs visible before work is closed.',
     input: 'Quote requests, approved scope, invoice items and payment events.',
     output: 'Approved quote, issued invoice, reconciled payment and clear cost record.',
     control: 'A Human approves price, invoice and any external payment action.',
-    next: 'Use the quote-to-invoice route to connect enquiries, invoices and Energy/billing.',
+    next: 'Use the quote-to-invoice route to connect enquiries, invoices and billing.',
     metrics: [['1', 'Flow route'], ['4', 'Cards'], ['A$0', 'Live value']],
     activity: [
       ['invoice', 'Today · 09:42', 'Invoice template ready', 'Finance Agent can prepare invoice details once a real job exists.'],
-      ['billing', 'Today · 09:48', 'Energy boundary checked', 'Costs remain visible before any Work item is closed.'],
+      ['billing', 'Today · 09:48', 'Cost limit checked', 'Costs remain visible before any Work item is closed.'],
       ['check', 'Next', 'Owner approval required', 'Confirm pricing rules before publishing or sending finance actions.'],
     ],
   },
@@ -152,7 +152,7 @@ const DEPARTMENT_PROFILES = {
     activity: [
       ['platform', 'Today · 08:55', 'Sample listing reviewed', 'Listing Agent suggested copy improvements for customer discovery.'],
       ['flow', 'Today · 09:02', 'Find new customers ready', 'The free starter Flow is available as the first acquisition route.'],
-      ['message', 'Next', 'Prepare customer offer', 'Sela can draft the offer, but the provider approves publication.'],
+      ['message', 'Next', 'Prepare customer offer', 'The assistant can draft the offer, but the provider approves publication.'],
     ],
   },
   assurance: {
@@ -160,13 +160,13 @@ const DEPARTMENT_PROFILES = {
     mission: 'Keep agreements, records, insurance, evidence and business rules ready before work creates risk.',
     input: 'Contracts, insurance, licences, approvals, evidence and operating rules.',
     output: 'Reviewable records, renewal reminders and clear approval boundaries.',
-    control: 'Trust and compliance items stay Human-owned even when Sela prepares checklists.',
-    next: 'Open the assurance Flow to inspect contracts, settings and Energy boundaries.',
+    control: 'Trust and compliance items stay Human-owned even when the assistant prepares checklists.',
+    next: 'Open the assurance Flow to inspect contracts, settings and cost limits.',
     metrics: [['14d', 'Insurance reminder'], ['1', 'Flow route'], ['3', 'Control modules']],
     activity: [
-      ['shield', 'Today · 09:30', 'Insurance reminder created', 'Sela marked a sample renewal check for review in this department.'],
+      ['shield', 'Today · 09:30', 'Insurance reminder created', 'The assistant marked a sample renewal check for review in this department.'],
       ['file', 'Today · 09:36', 'Record checklist drafted', 'Contract Agent can prepare the checklist; owner confirms the final state.'],
-      ['check', 'Next', 'Set approval boundary', 'Confirm what Sela can prepare versus what a Human must decide.'],
+      ['check', 'Next', 'Set approval boundary', 'Confirm what the assistant can prepare versus what a Human must decide.'],
     ],
   },
   operations: {
@@ -177,7 +177,7 @@ const DEPARTMENT_PROFILES = {
     control: 'No external action until the route has a responsible owner.',
     next: 'Map this route into a department before hiring capacity.',
     metrics: [['0', 'Live routes'], ['0', 'Cards'], ['0', 'Work']],
-    activity: [['flow', 'Next', 'Map route to department', 'Sela can help classify the route before Work is assigned.']],
+    activity: [['flow', 'Next', 'Map route to department', 'The assistant can help classify the route before Work is assigned.']],
   },
 };
 
@@ -238,8 +238,8 @@ function CompanyOSRuntimeCore({
   }, [flow, workProcess]);
   useEffect(() => {
     if (!active || workProcess) return undefined;
-    // 14/09/2026: lớp Flow phải mang `flowId` — không có nó, "giải thích quy trình này" từ thanh Sela
-    // luôn phải hỏi lại "quy trình nào?" dù chủ đang nhìn thẳng vào nó.
+    // The Flow layer carries `flowId` so an assistant asked to "explain this process"
+    // knows which process the owner is looking at.
     window.dispatchEvent(new CustomEvent('company-os-selection', { detail: { title: focusedNode?.label || flow?.name || companyCard?.title || businessName || 'your company', shell: flow ? 'flow' : 'company', flowId: flow?.id || undefined, processId: focusedNode?.id || undefined } }));
     return () => window.dispatchEvent(new CustomEvent('company-os-selection', { detail: null }));
   }, [active, workProcess, focusedNode?.label, flow?.name, companyCard?.title, businessName]);
@@ -388,7 +388,7 @@ function CompanyOSRuntimeCore({
     const nodes = Array.isArray(item.nodes) ? item.nodes : [];
     const aiNodes = nodes.filter(node => node.ai_persona || node.kind === 'ai_step');
     const humanNodes = nodes.filter(node => ['step', 'approval', 'payment', 'touchpoint', 'document', 'comms'].includes(node.kind));
-    const aiName = item.sampleAi || (aiNodes[0]?.ai_persona ? `AI · ${aiNodes[0].ai_persona}` : 'Sela can prepare work after a Human assigns it');
+    const aiName = item.sampleAi || (aiNodes[0]?.ai_persona ? `AI · ${aiNodes[0].ai_persona}` : 'The assistant can prepare work after a Human assigns it');
     const ownerName = item.sampleOwner || (humanNodes.length ? 'Human owner · approves external action' : 'Flow owner · not assigned yet');
     return {
       description: item.description || 'A repeatable route inside this department.',
@@ -424,8 +424,8 @@ function CompanyOSRuntimeCore({
       ? `${activeArea?.flows.length || 0} Flow route${activeArea?.flows.length === 1 ? '' : 's'} · ${areaStepCount} cards · ${areaOpenWork} open Work item${areaOpenWork === 1 ? '' : 's'}`
       : `${companyDiagramAreas.length} departments · ${rootFlows.length} live Flow route${rootFlows.length === 1 ? '' : 's'}${reviewOnlyFlows.length ? ` · ${reviewOnlyFlows.length} sample routes` : ''} · ${liveWorkCount} Work item${liveWorkCount === 1 ? '' : 's'}`;
   const sampleAreaEvents = [
-    { time: '09:10', title: `${selectedCompanyTitle} checked`, detail: rightRailFlows.length ? `${rightRailFlows.length} Flow route${rightRailFlows.length === 1 ? '' : 's'} available in this scope.` : 'No saved Flow yet. Sela can help draft the first route.' },
-    { time: '09:16', title: 'Sela suggested next action', detail: rightRailFlows.length ? 'Open the Flow, inspect owners, then assign Work only where a real request exists.' : 'Create one repeatable Flow before hiring a Human or Agent.' },
+    { time: '09:10', title: `${selectedCompanyTitle} checked`, detail: rightRailFlows.length ? `${rightRailFlows.length} Flow route${rightRailFlows.length === 1 ? '' : 's'} available in this scope.` : 'No saved Flow yet. The assistant can help draft the first route.' },
+    { time: '09:16', title: 'The assistant suggested next action', detail: rightRailFlows.length ? 'Open the Flow, inspect owners, then assign Work only where a real request exists.' : 'Create one repeatable Flow before hiring a Human or Agent.' },
     { time: '09:24', title: 'Company map updated', detail: `${selectedCompanyTitle} remains linked to Company -> Flow -> Work.` },
   ];
   const selectedCompanyActivity = selectedProfile?.activity?.length
@@ -439,7 +439,7 @@ function CompanyOSRuntimeCore({
   const notices = [
     { label: 'NOTIFICATIONS', title: 'New enquiries land here', detail: 'Open the request, quote or message from the bell.', action: 'View enquiries', run: () => onModule('leads') },
     { label: 'FLOW ACTIVITY', title: rootFlows.length ? `${rootFlows.length} main Flow ready` : 'No Flow yet', detail: rootFlows.length ? 'Pick a department card to see its Flow routes and activity.' : 'Start with Company setup or Create Studio.', action: rootFlows.length ? 'Open flows' : 'Setup company', run: () => rootFlows.length ? setAreaView(true) : setSetupOpen(true) },
-    { label: 'WORK ATTENTION', title: liveWorkCount ? `${liveWorkCount} Work item${liveWorkCount === 1 ? '' : 's'} tracked` : 'No live Work yet', detail: liveWorkCount ? `${openWorkCount} still open across your company.` : 'Work appears only after a Flow creates a real job.', action: liveWorkCount ? 'View jobs' : 'Ask Sela', run: () => liveWorkCount ? onModule('jobs') : window.dispatchEvent(new CustomEvent('company-os-selection', { detail: { title: identityName } })) },
+    { label: 'WORK ATTENTION', title: liveWorkCount ? `${liveWorkCount} Work item${liveWorkCount === 1 ? '' : 's'} tracked` : 'No live Work yet', detail: liveWorkCount ? `${openWorkCount} still open across your company.` : 'Work appears only after a Flow creates a real job.', action: liveWorkCount ? 'View jobs' : 'Ask the assistant', run: () => liveWorkCount ? onModule('jobs') : window.dispatchEvent(new CustomEvent('company-os-selection', { detail: { title: identityName } })) },
   ];
   const activeNotice = import.meta.env.DEV && sampleNotice ? sampleNotice : notices[noticeIndex % notices.length];
   const detailArea = departmentDetail ? companyDiagramAreas.find(area => area.id === departmentDetail.id) : null;
@@ -453,7 +453,7 @@ function CompanyOSRuntimeCore({
     if (flow) return [
       { id: 'flow-current-work', group: 'Next step', label: focusedNode ? (focusedNode.flow_ref ? 'Open selected Subflow' : 'Open selected work') : 'Choose work to coordinate', consequenceLabel: focusedNode?.label || 'Select a responsibility in Activity', primary: true, run: () => { if (focusedNode?.flow_ref) open(focusedNode.flow_ref); else if (focusedNode) { setEntryTaskId(null); setWorkProcess(focusedNode); } else { setRight(true); if (window.innerWidth <= 1024) setLeft(false); } } },
       { id: 'flow-preview', group: 'Explore', label: 'Preview this route', consequenceLabel: 'Preview the sequence', run: () => { setFlowPreviewIndex(0); setRight(true); if (window.innerWidth <= 1024) setLeft(false); } },
-      { id: 'flow-next-work', group: 'Sela guides', label: focusedNode ? `Focus ${focusedNode.label || 'current process'}` : 'Focus first process', consequenceLabel: 'Input, owner and output', run: () => { const node = focusedNode || flow.nodes?.[0]; if (node) { setFocusedNodeId(String(node.id)); setProcessOverview(node); } } },
+      { id: 'flow-next-work', group: 'Assistant guides', label: focusedNode ? `Focus ${focusedNode.label || 'current process'}` : 'Focus first process', consequenceLabel: 'Input, owner and output', run: () => { const node = focusedNode || flow.nodes?.[0]; if (node) { setFocusedNodeId(String(node.id)); setProcessOverview(node); } } },
       { id: 'flow-information', group: 'Flow', label: 'View Flow structure', consequenceLabel: 'Master Flow and Subflows', run: () => { setLeft(true); if (window.innerWidth <= 1024) setRight(false); } },
       { id: 'flow-process', group: 'Flow', label: 'Explore process work', consequenceLabel: focusedNode?.label || flow.name, run: () => { setRight(true); if (window.innerWidth <= 1024) setLeft(false); } },
       { id: 'flow-assign', group: 'Design & assignment', label: 'Configure Human / AI', consequenceLabel: 'Responsible role and approval rules in Create Studio', run: () => onStudio({ ...flow, processId: focusedNode?.id, inspector: 'runtime' }) },
@@ -463,7 +463,7 @@ function CompanyOSRuntimeCore({
     const base = [
       {
         id: 'cos-company-open-information',
-        group: 'Sela suggests',
+        group: 'Assistant suggests',
         label: companyCard ? `About ${targetTitle}` : 'About my company',
         consequenceLabel: 'Key facts',
         intents: [`Show me the facts for ${targetTitle}`],
@@ -471,7 +471,7 @@ function CompanyOSRuntimeCore({
       },
       {
         id: 'cos-company-open-activity',
-        group: 'Sela suggests',
+        group: 'Assistant suggests',
         label: 'See what needs doing',
         consequenceLabel: companyCard ? `Work in ${targetTitle}` : 'Work across your company',
         intents: [`Review activity for ${targetTitle}`],
@@ -510,7 +510,7 @@ function CompanyOSRuntimeCore({
     if (companyCard && !companyCard.external) {
       base.splice(2, 0, {
         id: 'cos-company-open-department-details',
-        group: 'Sela suggests',
+        group: 'Assistant suggests',
         label: `Open ${targetTitle} overview`,
         consequenceLabel: 'Owner and controls',
         intents: [`Open ${targetTitle} department view`],
@@ -562,8 +562,8 @@ function CompanyOSRuntimeCore({
             <div className="cos-profile-stats"><span><b>{companyDiagramAreas.length}</b>Areas</span><span><b>{rootFlows.length}</b>Main Flows</span><span><b>{liveWorkCount}</b>Work</span></div>
           </section>
           <section>
-            <small>ENERGY</small>
-            <button type="button" onClick={() => { setProfileOpen(false); onModule('billing'); }}><Zap size={15}/><span><strong>Energy & billing</strong><em>Balance, receipts, usage and renewal controls</em></span></button>
+            <small>COSTS</small>
+            <button type="button" onClick={() => { setProfileOpen(false); onModule('billing'); }}><Zap size={15}/><span><strong>Costs & billing</strong><em>Balance, receipts, usage and renewal controls</em></span></button>
           </section>
           <section>
             <small>OPERATIONS</small>
@@ -575,11 +575,11 @@ function CompanyOSRuntimeCore({
     </header>
     <div className="cos-workstation" data-left={left} data-right={right}>
       {left ? <aside className="cos-rail cos-rail--left" aria-label="Information panel"><header><small>INFORMATION</small><h2>{flow ? flow.name : companyCard?.title || (showFirstRun ? 'Company setup' : identityName)}</h2><button className="cos-rail-toggle" aria-label="Collapse information panel" onClick={() => toggleRail('left')}><PanelLeftClose size={16}/></button></header><div className="cos-rail-body">
-        {!flow && companyCard && <section className="cos-operating-card cos-area-context"><span className="cos-context-label">{companyCard.external ? 'External relationship' : 'Department responsibility'}</span><p className="cos-rail-lead">{selectedProfile?.mission || companyCard.description}</p>{companyCard.external && <p>Connected department: <strong>{activeArea?.title || 'Your company'}</strong>.</p>}<div className="cos-area-stats" aria-label="Selected area facts"><div><strong>{activeArea?.flows.length || 0}</strong><span>Flows</span></div><div><strong>{areaStepCount}</strong><span>Cards</span></div><div><strong>{areaWorkItems.length}</strong><span>Work items</span></div></div>{selectedProfile && <div className="cos-department-mini-metrics" aria-label={`${companyCard.title} department metrics`}>{selectedProfile.metrics.map(([value, label]) => <span key={`${value}-${label}`}><strong>{value}</strong>{label}</span>)}</div>}<dl><div><dt><UserRound size={14}/>Owner</dt><dd>{selectedProfile?.owner || areaOwner}</dd></div><div><dt><FileText size={14}/>Input</dt><dd>{selectedProfile?.input || (companyCard.external ? 'External relationship context.' : 'Customer, company or service-place signal.')}</dd></div><div><dt><CheckCircle2 size={14}/>Output</dt><dd>{selectedProfile?.output || 'Clear next operating action.'}</dd></div><div><dt><ShieldCheck size={14}/>Control</dt><dd>{selectedProfile?.control || 'Human approval remains visible before Sela sends, publishes, charges or assigns external work.'}</dd></div><div><dt><BriefcaseBusiness size={14}/>Modules</dt><dd>{companyCard.external ? 'Relationship context only' : departmentModules(activeArea).map(([, label]) => label).join(' · ')}</dd></div></dl>{selectedProfile && <p className="cos-next-note"><Sparkles size={14}/>{selectedProfile.next}</p>}{companyCard.external ? <button onClick={() => setCompanyCard(activeArea)}>Open linked department<ArrowRight size={15}/></button> : <button onClick={() => setDepartmentDetail(companyCard)}>Open department overview<ArrowRight size={15}/></button>}</section>}
-        {!flow && !companyCard && !showFirstRun && <section className="cos-operating-card cos-company-info"><span className="cos-context-label">Operating snapshot</span><p className="cos-rail-lead">Your departments, outside relationships and saved Flow routes in one place.</p><div className="cos-area-stats" aria-label="Company facts"><div><strong>{companyDiagramAreas.length}</strong><span>Departments</span></div><div><strong>{rootFlows.length}</strong><span>Live flows</span></div><div><strong>{liveWorkCount}</strong><span>Work items</span></div></div><dl><div><dt><Bell size={14}/>Incoming</dt><dd>Requests, replies and service updates appear in Notifications.</dd></div><div><dt><Workflow size={14}/>Navigate</dt><dd>Select a department to see its responsibility and operating activity.</dd></div><div><dt><Sparkles size={14}/>Coordinate</dt><dd>Ask Sela what needs attention or use a suggested next action.</dd></div></dl></section>}
+        {!flow && companyCard && <section className="cos-operating-card cos-area-context"><span className="cos-context-label">{companyCard.external ? 'External relationship' : 'Department responsibility'}</span><p className="cos-rail-lead">{selectedProfile?.mission || companyCard.description}</p>{companyCard.external && <p>Connected department: <strong>{activeArea?.title || 'Your company'}</strong>.</p>}<div className="cos-area-stats" aria-label="Selected area facts"><div><strong>{activeArea?.flows.length || 0}</strong><span>Flows</span></div><div><strong>{areaStepCount}</strong><span>Cards</span></div><div><strong>{areaWorkItems.length}</strong><span>Work items</span></div></div>{selectedProfile && <div className="cos-department-mini-metrics" aria-label={`${companyCard.title} department metrics`}>{selectedProfile.metrics.map(([value, label]) => <span key={`${value}-${label}`}><strong>{value}</strong>{label}</span>)}</div>}<dl><div><dt><UserRound size={14}/>Owner</dt><dd>{selectedProfile?.owner || areaOwner}</dd></div><div><dt><FileText size={14}/>Input</dt><dd>{selectedProfile?.input || (companyCard.external ? 'External relationship context.' : 'Customer, company or service-place signal.')}</dd></div><div><dt><CheckCircle2 size={14}/>Output</dt><dd>{selectedProfile?.output || 'Clear next operating action.'}</dd></div><div><dt><ShieldCheck size={14}/>Control</dt><dd>{selectedProfile?.control || 'Human approval remains visible before the assistant sends, publishes, charges or assigns external work.'}</dd></div><div><dt><BriefcaseBusiness size={14}/>Modules</dt><dd>{companyCard.external ? 'Relationship context only' : departmentModules(activeArea).map(([, label]) => label).join(' · ')}</dd></div></dl>{selectedProfile && <p className="cos-next-note"><Sparkles size={14}/>{selectedProfile.next}</p>}{companyCard.external ? <button onClick={() => setCompanyCard(activeArea)}>Open linked department<ArrowRight size={15}/></button> : <button onClick={() => setDepartmentDetail(companyCard)}>Open department overview<ArrowRight size={15}/></button>}</section>}
+        {!flow && !companyCard && !showFirstRun && <section className="cos-operating-card cos-company-info"><span className="cos-context-label">Operating snapshot</span><p className="cos-rail-lead">Your departments, outside relationships and saved Flow routes in one place.</p><div className="cos-area-stats" aria-label="Company facts"><div><strong>{companyDiagramAreas.length}</strong><span>Departments</span></div><div><strong>{rootFlows.length}</strong><span>Live flows</span></div><div><strong>{liveWorkCount}</strong><span>Work items</span></div></div><dl><div><dt><Bell size={14}/>Incoming</dt><dd>Requests, replies and service updates appear in Notifications.</dd></div><div><dt><Workflow size={14}/>Navigate</dt><dd>Select a department to see its responsibility and operating activity.</dd></div><div><dt><Sparkles size={14}/>Coordinate</dt><dd>Ask the assistant what needs attention or use a suggested next action.</dd></div></dl></section>}
 
         {showFirstRun && <section className="cos-operating-card cos-selected-work">
-          <small>SELA SETUP RHYTHM</small>
+          <small>SETUP RHYTHM</small>
           <h3>{serviceType || 'Choose your service type'}</h3>
           <p>Next: confirm the company shell, create one Master Flow, then decide whether a Human or AI teammate should own each work card.</p>
           <dl>
@@ -605,10 +605,10 @@ function CompanyOSRuntimeCore({
       <CompanyOSCanvas key={flow?.id || 'company'} canvasRef={canvasRef} className={flow ? '' : 'cos-canvas--company'} aria-label={flow ? 'Saved flow diagram' : 'Company flows'} zoom={flow ? zoom : undefined} onZoom={flow ? setZoom : undefined} onFit={flow ? () => setZoom(Math.max(.3, Math.min(1, ((canvasRef.current?.clientWidth || 700) - 56) / Math.max(graph.width, 700)))) : undefined}>
         {(!flow && areaView) && <div className="cos-shell-toolbar cos-shell-toolbar--summary"><div><small>{shellLabel.toUpperCase()}</small><strong>{shellTitle}</strong><span>{shellSubtext}</span></div></div>}
         {!flow ? <div className="cos-company-home">
-          {showFirstRun && <section className="cos-first-run" aria-label="Sela Service OS onboarding">
+          {showFirstRun && <section className="cos-first-run" aria-label="Service OS onboarding">
             <div className="cos-first-run-copy">
-              <small>SELA · COMPANY OS FIRST RUN</small>
-              <h2>Hi, I’m Sela. I’ll guide you through your first Service OS setup.</h2>
+              <small>SERVICE OS · FIRST RUN</small>
+              <h2>Hi, I’m your setup assistant. I’ll guide you through your first Service OS setup.</h2>
               <p>Keep track of how your business runs customer work. Service OS has three layers: Company, Flow and Work.</p>
               <div className="cos-space-story" aria-label="Service OS space map">
                 {SPACE_STORY.map(({ icon: Icon, label, body }) => <article key={label}>
@@ -622,7 +622,7 @@ function CompanyOSRuntimeCore({
               <div className="cos-service-picker" role="group" aria-label="Choose service type">
                 {SERVICE_OPTIONS.map((option) => <button key={option} type="button" aria-pressed={serviceType === option} onClick={() => setServiceType(option)}>{option}</button>)}
               </div>
-              <div className="cos-first-run-questions" aria-label="Sela setup questions">
+              <div className="cos-first-run-questions" aria-label="Setup questions">
                 {FIRST_RUN_QUESTIONS.map((question) => <span key={question}>{question}</span>)}
               </div>
             </div>
@@ -745,7 +745,7 @@ function CompanyOSRuntimeCore({
               title={node.label || node.id}
               eyebrow={node.flow_ref ? 'Subflow route' : nodeVariant === 'ai' ? 'AI prepares' : 'Human owns'}
               description={node.description || node.operation?.purpose}
-              facts={[[ 'Assignment', node.assignee?.name || node.owner?.name || node.assignee_name ? 'Named worker recorded' : 'Role only' ], [ 'Energy', detail.energy ], [ 'Time', node.operation?.sla ]].filter(([,value]) => value)}
+              facts={[[ 'Assignment', node.assignee?.name || node.owner?.name || node.assignee_name ? 'Named worker recorded' : 'Role only' ], [ 'Cost', detail.energy ], [ 'Time', node.operation?.sla ]].filter(([,value]) => value)}
               tasks={node.flow_ref || processTasks(node).length === 1 ? [] : processTasks(node).map(task => ({ ...task, meta: `${task.kind} · ${task.sla || 'Time not set'}`, actionLabel: 'View work' }))} onTaskOpen={task => { setFocusedNodeId(String(node.id)); setEntryTaskId(task.id); setWorkProcess(node); }}
               owner={detail.owner} status={node.flow_ref ? 'Linked process group' : linked.length ? `${linked.length} assigned work items` : 'No assigned work'}
               meta={detail.status === 'No run recorded' ? '' : detail.status} action={node.flow_ref ? 'Open Subflow' : 'View work'}
@@ -834,7 +834,7 @@ function CompanyOSRuntimeCore({
       <div className="cos-detail-grid">
         <article><ShieldCheck size={17}/><small>PIC</small><strong>{selectedCard.owner}</strong><span>{nodeResponsibility(selected)}</span></article>
         <article><GitBranch size={17}/><small>Status</small><strong>{selectedCard.status}</strong><span>{selectedCard.actionLabel}</span></article>
-        <article><Zap size={17}/><small>Energy</small><strong>{selectedCard.energy}</strong><span>Shown only when the flow records a metered action.</span></article>
+        <article><Zap size={17}/><small>Cost</small><strong>{selectedCard.energy}</strong><span>Shown only when the flow records a metered action.</span></article>
       </div>
       <section className="cos-operating-card">
         <small>WHAT THIS CARD DOES</small>
@@ -858,15 +858,15 @@ function CompanyOSRuntimeCore({
       <button className="cos-close" aria-label="Close company setup" onClick={() => setSetupOpen(false)}><X size={19}/></button>
       <small>COMPANY OS · COMPANY SETUP</small>
       <h2 id="company-template-title">Choose a starting map for {businessName || 'your company'}.</h2>
-      <p>Start simple. This gives Sela the right Company areas and a suggested first Flow. You can change the map later; it does not send, publish or charge anything.</p>
+      <p>Start simple. This gives the assistant the right Company areas and a suggested first Flow. You can change the map later; it does not send, publish or charge anything.</p>
       <div className="cos-template-modal-body">
         <div className="cos-template-choice-grid" role="radiogroup" aria-label="Company template">
           {COMPANY_TEMPLATES.map((template) => { const Icon = template.icon; const active = template.id === templateId; return <button type="button" key={template.id} role="radio" aria-checked={active} className={active ? 'active' : ''} onClick={() => { setTemplateId(template.id); setServiceType(template.title); setSetupSelaNote(''); }}>
             <Icon size={18}/><span><strong>{template.title}</strong><small>{template.description}</small></span>{template.badge && <em>{template.badge}</em>}
           </button>; })}
         </div>
-        <aside className="cos-template-sela" aria-label="Sela template support">
-          <header><span><Sparkles size={18}/></span><div><small>SELA · SETUP GUIDE</small><strong>I’ll help shape this map.</strong></div></header>
+        <aside className="cos-template-sela" aria-label="Template support">
+          <header><span><Sparkles size={18}/></span><div><small>SETUP GUIDE</small><strong>I’ll help shape this map.</strong></div></header>
           <p>{setupSelaNote || `For ${selectedTemplate.title}, I’m starting with the areas that make the first customer journey clear.`}</p>
           <dl><div><dt>Next Flow</dt><dd>{selectedTemplate.firstFlow}</dd></div><div><dt>Control</dt><dd>A Human remains accountable for every decision.</dd></div></dl>
           <button type="button" onClick={() => setSetupSelaNote(`This template starts with ${selectedTemplate.areas.join(', ')}. We can adjust each area later without interrupting active work.`)}><Sparkles size={15}/>Why this map?</button>

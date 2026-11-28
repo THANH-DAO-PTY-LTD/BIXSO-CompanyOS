@@ -14,8 +14,26 @@
     "react-router-dom": "7.18.7",
     "vite": "6.4.6"
   },
-  "version": "0.2.0-beta.1",
+  "version": "0.2.0-beta.2",
   "license": "MIT",
+  "author": "Thanh Dao Pty Ltd",
+  "homepage": "https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS/issues"
+  },
+  "keywords": [
+    "bixso",
+    "bixso-os",
+    "local-first",
+    "open-source",
+    "service-business",
+    "workflow",
+    "one-person-business"
+  ],
   "engines": {
     "node": ">=22.12.0"
   }

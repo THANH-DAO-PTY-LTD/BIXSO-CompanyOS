@@ -1,9 +1,9 @@
-// flowLayout — auto-layout ProviderFlow (nodes/edges không mang x/y) thành lưới trái→phải.
-// Tầng (column) = longest-path từ node gốc; thứ tự trong tầng = thứ tự duyệt ổn định.
-// Trả { positioned: [{...node, col, row, x, y}], edges, width, height }.
+// flowLayout — lays out a flow (nodes/edges carry no x/y) as a left-to-right grid.
+// Column = longest path from a root node; order within a column = stable traversal order.
+// Returns { positioned: [{...node, col, row, x, y}], edges, width, height }.
 
-const COL_W = 220;   // khoảng cách ngang giữa 2 tầng
-const ROW_H = 142;   // khoảng cách dọc giữa 2 lane
+const COL_W = 220;   // horizontal gap between columns
+const ROW_H = 142;   // vertical gap between lanes
 const PAD_X = 40;
 const PAD_Y = 40;
 export const DEFAULT_FLOW_NODE_W = 150;
@@ -34,13 +34,12 @@ export function layoutFlow(flow, options = {}) {
     indeg.set(t, (indeg.get(t) || 0) + 1);
   }
 
-  // Cạnh quay ngược (vd nhánh "no" quay về bước báo giá) tạo chu trình — nếu
-  // đưa vào phép tính cột sẽ đẩy cột phình vô hạn (bị chặn bởi số vòng lặp
-  // nhưng vẫn làm sơ đồ giãn gấp đôi). DFS đánh dấu back-edge để LOẠI khỏi
-  // layering; cạnh vẫn được VẼ (đường vòng dưới) như thường.
+  // A backward edge (e.g. a "no" branch returning to the quote step) creates a cycle.
+  // Counting it in the column maths would keep widening the diagram, so DFS marks
+  // back-edges and leaves them out of layering. They are still drawn, as a loop below.
   const backEdges = new Set(); // "f→t"
   {
-    const color = new Map(); // 0 trắng, 1 đang trên stack, 2 xong
+    const color = new Map(); // 0 unvisited, 1 on stack, 2 done
     const dfs = (start) => {
       const stack = [[start, 0]];
       color.set(start, 1);
@@ -62,7 +61,7 @@ export function layoutFlow(flow, options = {}) {
     for (const n of nodes) { const id = String(n.id); if (!color.get(id)) dfs(id); }
   }
 
-  // col = longest path từ mọi source, chỉ trên cạnh xuôi (đồ thị giờ là DAG).
+  // col = longest path from any source, forward edges only (the graph is now a DAG).
   const col = new Map(nodes.map((n) => [String(n.id), 0]));
   for (let iter = 0; iter < nodes.length; iter++) {
     let changed = false;

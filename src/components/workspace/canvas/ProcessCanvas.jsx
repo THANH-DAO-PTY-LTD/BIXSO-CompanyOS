@@ -1,6 +1,6 @@
 // ProcessCanvas — the flagship surface of Workspace OS (remaster Phase 1).
 // Renders a ProviderFlow as a STRUCTURED canvas: layout is computed
-// (lib/flowLayout.js — no x/y in the schema, founder decision 28/07/2026),
+// (lib/flowLayout.js — the schema stores no x/y),
 // interaction is real:
 //   • pan / zoom                      (canvas-kit usePanZoom)
 //   • port-drag to connect steps      (kills the old chip-toggle editor)
@@ -319,8 +319,8 @@ export default function ProcessCanvas({
         {layout.positioned.map((n) => {
           const sym = symbolOf(n.kind);
           const Icon = sym.icon;
-          // MASTER WORKFLOW (20/08): khối quy-trình-con vẽ khác hẳn node thường —
-          // nó là CỬA vào một flow con (đã lấp) hoặc Ô TRỐNG được đề xuất.
+          // Master workflow: a sub-process block is drawn differently from a normal node.
+          // It is a door into a child flow (filled) or a suggested empty slot.
           const sf = n.kind === 'subflow' ? (subflowInfo?.[String(n.id)] || { filled: !!n.flow_ref }) : null;
           const toks = tokens[String(n.id)] || [];
           const met = metricByNode[String(n.id)];
@@ -426,7 +426,7 @@ export default function ProcessCanvas({
               <div style={{ fontSize: sf ? 14 : 13, fontWeight: sf ? 700 : 560, color: sf && !sf.filled ? 'var(--svc-text-muted)' : 'var(--svc-ink)', marginTop: 5, lineHeight: 1.3, pointerEvents: 'none' }}>
                 {n.label || n.id}
               </div>
-              {/* Khối master: dòng trạng thái + lời mời hành động — cửa phải nói nó mở đi đâu. */}
+              {/* Master block: status line plus a call to action. A door must say where it leads. */}
               {sf && (
                 <div style={{ marginTop: 6, pointerEvents: 'none' }}>
                   {sf.filled ? (

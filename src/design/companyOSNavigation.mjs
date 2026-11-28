@@ -65,7 +65,7 @@ const KIND_LABELS = {
 };
 
 const PERSONA_LABELS = {
-  bixso: 'Sela',
+  bixso: 'Assistant',
   planner: 'Admin Agent',
   negotiator: 'Sales Agent',
   care: 'Customer Care Agent',
@@ -73,8 +73,8 @@ const PERSONA_LABELS = {
   bookkeeper: 'Finance Agent',
   contract_drafter: 'Contract Agent',
   flow_designer: 'Flow Designer Agent',
-  concierge: 'Sela',
-  copilot: 'Sela',
+  concierge: 'Assistant',
+  copilot: 'Assistant',
 };
 
 function shortText(value, fallback = 'Not recorded yet') {
@@ -119,7 +119,7 @@ export function nodeOperatingCard(node = {}, events = []) {
     purpose,
     input,
     output,
-    energy: operation.energy_per_run != null && operation.energy_per_run !== '' && Number.isFinite(Number(operation.energy_per_run)) && Number(operation.energy_per_run) >= 0 ? `${Number(operation.energy_per_run)} Energy / run · configured` : 'Task cost not confirmed',
+    energy: operation.energy_per_run != null && operation.energy_per_run !== '' && Number.isFinite(Number(operation.energy_per_run)) && Number(operation.energy_per_run) >= 0 ? `${Number(operation.energy_per_run)} units / run · configured` : 'Task cost not confirmed',
     status: lastEvent ? `${eventVerb(lastEvent)} · ${shortText(lastEvent.source, 'source unknown')}` : 'No run recorded',
     actionLabel: node.action ? `Opens ${node.action}` : node.flow_ref ? 'Opens linked flow' : 'Choose a job to work on',
   };

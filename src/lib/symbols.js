@@ -18,10 +18,10 @@ export const SYMBOLS = {
   approval:   { label: 'Approval',       category: 'Decision',  icon: Stamp,         color: 'var(--svc-amber)',   soft: '#FCF2DE',                 branches: false, persona: false, client: false },
   wait:       { label: 'Wait',           category: 'Work',      icon: Hourglass,     color: 'var(--svc-slate)',   soft: 'var(--svc-surface-sunk)', branches: false, persona: false, client: false },
   comms:      { label: 'Message',        category: 'Client',    icon: MessageCircle, color: 'var(--svc-primary)', soft: 'var(--svc-coral-50)',     branches: false, persona: false, client: true  },
-  // MASTER WORKFLOW (20/08/2026) — ký hiệu thứ 10: khối quy-trình-con trên bản
-  // đồ master của công ty. flow_ref trỏ flow con, null = Ô TRỐNG được đề xuất.
-  // Chỉ hợp lệ trong flow role 'master' (backend enforce) — KHÔNG đưa vào
-  // palette Design của flow thường (SYMBOL_CATEGORIES không có 'Structure').
+  // Master workflow, the tenth symbol: a sub-process block on the company's master map.
+  // flow_ref points to the child flow; null is a suggested empty slot.
+  // Valid only in a 'master' flow, so it is not in the normal Design palette
+  // (SYMBOL_CATEGORIES has no 'Structure').
   subflow:    { label: 'Sub-process',    category: 'Structure', icon: Boxes,         color: 'var(--svc-ink, #23262B)', soft: 'var(--svc-surface-sunk)', branches: false, persona: false, client: false },
 };
 
