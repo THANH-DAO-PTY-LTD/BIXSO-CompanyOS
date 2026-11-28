@@ -9,6 +9,14 @@ A local web app for a one-person business. **Company** shows how your business w
 - **Builders:** developers and agencies building workspace tools for solo service businesses (photographers, designers, trades) can start from the Company → Flow → Work model, the Flow editor and the local storage layer.
 - **Service business owners:** try the sample company in your browser and tell us which step of your real work it doesn't fit.
 
+<!-- bixso-os-origin:start -->
+## Where this comes from
+
+These rules come from **[Serviceplace](https://serviceplace.com.au)**, a local services marketplace that BIXSO builds and runs. This repository is the open concept and a lite reference implementation of its rules: plain functions, local files and no accounts. The product adds what a real service needs, such as accounts, hosting and support, and it is still being built.
+
+Ideas and changes made here are reviewed for Serviceplace as well. See this project's [roadmap](docs/ROADMAP.md) and [how BIXSO OS is run](https://github.com/THANH-DAO-PTY-LTD/.github/blob/main/GOVERNANCE.md).
+<!-- bixso-os-origin:end -->
+
 ## Try the preview
 
 Use Node.js 24 and npm. Clone the repository or download and unpack the [prerelease source](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS/releases). In the source directory, run:
