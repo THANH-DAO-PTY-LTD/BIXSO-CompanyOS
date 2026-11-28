@@ -4,6 +4,11 @@
 
 A local web app for a one-person business. **Company** shows how your business works. **Flow** is a reusable process you can edit in Create Studio. **Work** is a concrete job linked to a Flow step.
 
+## Who it's for
+
+- **Builders:** developers and agencies building workspace tools for solo service businesses (photographers, designers, trades) can start from the Company → Flow → Work model, the Flow editor and the local storage layer.
+- **Service business owners:** try the sample company in your browser and tell us which step of your real work it doesn't fit.
+
 ## Try the preview
 
 Use Node.js 24 and npm. Clone the repository or download and unpack the [prerelease source](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS/releases). In the source directory, run:
