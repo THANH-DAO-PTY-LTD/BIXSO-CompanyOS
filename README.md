@@ -1,5 +1,7 @@
 # BIXSO Service OS
 
+![BIXSO Service OS: the Service OS app running locally with a fictional sample company](docs/media/bixso-service-os.png)
+
 A local web app for a one-person business. **Company** shows how your business works. **Flow** is a reusable process you can edit in Create Studio. **Work** is a concrete job linked to a Flow step.
 
 ## Try the preview
