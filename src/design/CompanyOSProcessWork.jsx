@@ -45,7 +45,7 @@ export default function CompanyOSProcessWork({ flow, node, items, events, onBack
   }, [flow, node, card.owner, onHire, onStudio, taskId, jobId, selectedJob?.title]);
   return <section className="cos-runtime cos-process-work">
     <header className="cos-header">
-      <div className="cos-brand"><Logo variant="mark-only" showText={false} linkTo={null}/><div><b>BIXSO Company OS</b><span>Local workspace</span></div></div>
+      <div className="cos-brand"><Logo variant="mark-only" showText={false} linkTo={null}/><div><b>BIXSO Service OS</b><span>Local workspace</span></div></div>
       <nav className="cos-shell-navigation" aria-label="Work navigation"><button onClick={onCompany}>Company</button><ArrowRight size={14}/>{departmentName && <><span>{departmentName}</span><ArrowRight size={14}/></>}<button onClick={onBack}>{flow.name}</button><ArrowRight size={14}/><strong>{node.label}</strong></nav>
       <div className="cos-company-identity"><div><b>{businessName}</b><span>{departmentName || flow.name} · Work</span></div><button className="cos-avatar" aria-label="Open profile and account" title="Profile & settings" onClick={onProfile}>{businessName.trim().slice(0, 1).toUpperCase()}</button></div>
     </header>

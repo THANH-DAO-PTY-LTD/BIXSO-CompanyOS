@@ -1,10 +1,10 @@
-# BIXSO Company OS
+# BIXSO Service OS
 
 A local web app for a one-person business. **Company** shows how your business works. **Flow** is a reusable process you can edit in Create Studio. **Work** is a concrete job linked to a Flow step.
 
 ## Try the preview
 
-Use Node.js 24 and npm. Clone the repository or download and unpack the [prerelease source](https://github.com/THANH-DAO-PTY-LTD/BIXSO-CompanyOS/releases). In the source directory, run:
+Use Node.js 24 and npm. Clone the repository or download and unpack the [prerelease source](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS/releases). In the source directory, run:
 
 ```sh
 npm ci
@@ -19,7 +19,7 @@ Use fictional records. The app stores them in the current browser profile and lo
 
 ## Try it and help shape it
 
-[Share feedback](https://github.com/THANH-DAO-PTY-LTD/BIXSO-CompanyOS/issues) about setup or a step that didn't fit your workflow. A fictional example helps others reproduce it. A challenge we'd like to build with contributors is an opt-in assistant that performs one clearly defined Work item and returns a result the owner can inspect. Propose a task, its expected output and how the owner can tell it succeeded.
+[Share feedback](https://github.com/THANH-DAO-PTY-LTD/BIXSO-Service-OS/issues) about setup or a step that didn't fit your workflow. A fictional example helps others reproduce it. A challenge we'd like to build with contributors is an opt-in assistant that performs one clearly defined Work item and returns a result the owner can inspect. Propose a task, its expected output and how the owner can tell it succeeded.
 
 Run `npm test` and `npm run build` before opening a pull request. See [CONTRIBUTING](CONTRIBUTING.md) and the [private security reporting channel](SECURITY.md).
 

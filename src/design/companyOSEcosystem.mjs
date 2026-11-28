@@ -7,7 +7,7 @@ export const companyAreas = [
 ];
 export const companyPartners = [
   { id: 'customers', title: 'Customers', description: 'Requests come in; updates and service results go back.', area: 'care' },
-  { id: 'platform', title: 'Company OS', description: 'Your services, customer discovery and AI support connect here.', area: 'growth' },
+  { id: 'platform', title: 'Service OS', description: 'Your services, customer discovery and AI support connect here.', area: 'growth' },
   { id: 'suppliers', title: 'Suppliers', description: 'Materials and resources support service delivery.', area: 'delivery' },
   { id: 'partners', title: 'Partners & community', description: 'Referrals and specialist support connect to your business.', area: 'growth' },
   { id: 'authorities', title: 'Authorities & insurance', description: 'Requirements and evidence connect to business assurance.', area: 'assurance' },

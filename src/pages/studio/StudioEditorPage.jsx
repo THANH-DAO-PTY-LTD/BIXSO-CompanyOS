@@ -141,7 +141,7 @@ function materializePattern(pattern) {
 export default function StudioEditorPage({ providerMode = false, assetKind = 'flow' }) {
   const [params] = useSearchParams();
   const id = params.get('id');
-  // Preserve the Company OS Department chosen before opening Studio. A new
+  // Preserve the Service OS Department chosen before opening Studio. A new
   // Flow then returns to that Department's Activity list after it is saved.
   const companyArea = params.get('companyArea') || null;
   const { profile } = useOutletContext() || {};

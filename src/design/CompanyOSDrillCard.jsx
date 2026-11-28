@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-// The same read -> open pattern at every depth of Company OS.
+// The same read -> open pattern at every depth of Service OS.
 export default function CompanyOSDrillCard({ icon: Icon, title, description, owner, status, meta, tasks = [], facts = [], action, onOpen, onTaskOpen, selected = false, index, eyebrow, taskActionLabel = 'Open Work shell', variant = 'flow', personFirst = false }) {
   const ref = useRef(null);
   useEffect(() => { if (selected) ref.current?.scrollIntoView({ block: 'nearest' }); }, [selected]);

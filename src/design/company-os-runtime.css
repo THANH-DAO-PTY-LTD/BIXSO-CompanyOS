@@ -66,7 +66,7 @@
 .cos-runtime .cos-notification-center{grid-template-columns:40px minmax(0,1fr) max-content}
 @media(max-width:720px){.cos-runtime .cos-notification-center{grid-template-columns:32px minmax(0,1fr) 32px}.cos-runtime .cos-shell-toolbar{flex-wrap:wrap}.cos-runtime .cos-shell-action{font-size:13px;padding:8px 10px}.cos-profile-popover{right:8px;top:58px;width:min(360px,calc(100vw - 18px))}.cos-area-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
-/* Company OS v1 language: left = Information, right = Activity. Keep canvas readable first. */
+/* Service OS v1 language: left = Information, right = Activity. Keep canvas readable first. */
 .cos-workstation[data-left] {
   --information-width: clamp(226px, 18vw, 300px);
   --activity-width: clamp(268px, 21vw, 344px);

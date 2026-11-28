@@ -1,5 +1,5 @@
 {
-  "name": "bixso-company-os",
+  "name": "bixso-service-os",
   "private": true,
   "type": "module",
   "scripts": {

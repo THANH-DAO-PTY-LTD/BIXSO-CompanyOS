@@ -24,7 +24,7 @@ import './company-os-navigation-rail.css';
 import './company-os-information-flow.css';
 import './company-os-polish.css';
 
-export const COMPANY_OS_OFFICIAL_BOUNDARY = 'Company OS is a local workspace.';
+export const COMPANY_OS_OFFICIAL_BOUNDARY = 'Service OS is a local workspace.';
 export const COMPANY_OS_FIRST_RUN_KEY = 'sp.company-os.1.first-run.story.dismissed';
 export const COMPANY_OS_GENERAL_TEMPLATE = {
   id: 'general-service-company',
@@ -540,8 +540,8 @@ function CompanyOSRuntimeCore({
   if (workProcess && flow) return <CompanyOSProcessWork key={`${workProcess.id}:${entryTaskId || ''}`} initialTaskId={entryTaskId} onProcess={node => { setEntryTaskId(null); setWorkProcess(node); }} flow={flow} node={workProcess} items={workForNode(workProcess.id)} events={activity.rows.filter(event => String(event.nodeId) === String(workProcess.id))} onBack={() => { setWorkProcess(null); setRight(true); }} onCompany={() => { setWorkProcess(null); setFlowId(null); setAreaView(false); }} onHire={onHire} onTask={onTask} onStudio={onStudio} onProfile={() => onModule('settings')} businessName={identityName} departmentName={activeFlowArea?.title}/>;
   return <section className="cos-runtime">
     <header className="cos-header">
-      <div className="cos-brand"><Logo variant="mark-only" showText={false} linkTo={null}/><div><b>BIXSO Company OS</b><span>Local workspace</span></div></div>
-      {flow ? <nav className="cos-shell-navigation" aria-label="Flow breadcrumb"><button onClick={() => { setFlowId(null); setAreaView(false); }}>Company</button><ArrowRight size={14}/>{activeFlowArea && <><button onClick={() => { setCompanyCard(activeFlowArea); setFlowId(null); setAreaView(false); }}>{activeFlowArea.title}</button><ArrowRight size={14}/></>}{parent && <><button onClick={() => open(parent.id)}>{parent.name}</button><ArrowRight size={14}/></>}<strong>{flow.name}</strong></nav> : <section className="cos-notification-center" aria-label="Company OS notifications" aria-live="polite">
+      <div className="cos-brand"><Logo variant="mark-only" showText={false} linkTo={null}/><div><b>BIXSO Service OS</b><span>Local workspace</span></div></div>
+      {flow ? <nav className="cos-shell-navigation" aria-label="Flow breadcrumb"><button onClick={() => { setFlowId(null); setAreaView(false); }}>Company</button><ArrowRight size={14}/>{activeFlowArea && <><button onClick={() => { setCompanyCard(activeFlowArea); setFlowId(null); setAreaView(false); }}>{activeFlowArea.title}</button><ArrowRight size={14}/></>}{parent && <><button onClick={() => open(parent.id)}>{parent.name}</button><ArrowRight size={14}/></>}<strong>{flow.name}</strong></nav> : <section className="cos-notification-center" aria-label="Service OS notifications" aria-live="polite">
         <div className="cos-notification-icon"><NotificationBell space="provider" className="cos-notification-bell" /></div>
         <div className="cos-notification-content"><span>{activeNotice.label}</span><b>{activeNotice.title}</b><small>{activeNotice.detail}</small></div>
         <button className="cos-notification-action" type="button" onClick={activeNotice.run}>{activeNotice.action}<ArrowRight size={15}/></button>
@@ -551,7 +551,7 @@ function CompanyOSRuntimeCore({
         <div><b>{identityName}</b><span>{flow ? `${activeFlowArea?.title || 'Company'} · Flow` : 'Company overview'}</span></div>
         <button className="cos-avatar" title="Profile & company configuration" aria-label="Open profile and company configuration" onClick={() => setProfileOpen(!profileOpen)}>{identityInitials}</button>
         {profileOpen && <aside className="cos-profile-popover" aria-label="Profile and company configuration">
-          <header><span>{identityInitials}</span><div><strong>{identityName}</strong><small>Provider profile · Company OS</small></div></header>
+          <header><span>{identityInitials}</span><div><strong>{identityName}</strong><small>Provider profile · Service OS</small></div></header>
           <section>
             <small>ACCOUNT</small>
             <button type="button" onClick={() => { setProfileOpen(false); onModule('settings'); }}><Settings size={15}/><span><strong>Profile & settings</strong><em>Name, login, notifications and workspace preferences</em></span></button>
@@ -605,12 +605,12 @@ function CompanyOSRuntimeCore({
       <CompanyOSCanvas key={flow?.id || 'company'} canvasRef={canvasRef} className={flow ? '' : 'cos-canvas--company'} aria-label={flow ? 'Saved flow diagram' : 'Company flows'} zoom={flow ? zoom : undefined} onZoom={flow ? setZoom : undefined} onFit={flow ? () => setZoom(Math.max(.3, Math.min(1, ((canvasRef.current?.clientWidth || 700) - 56) / Math.max(graph.width, 700)))) : undefined}>
         {(!flow && areaView) && <div className="cos-shell-toolbar cos-shell-toolbar--summary"><div><small>{shellLabel.toUpperCase()}</small><strong>{shellTitle}</strong><span>{shellSubtext}</span></div></div>}
         {!flow ? <div className="cos-company-home">
-          {showFirstRun && <section className="cos-first-run" aria-label="Sela Company OS onboarding">
+          {showFirstRun && <section className="cos-first-run" aria-label="Sela Service OS onboarding">
             <div className="cos-first-run-copy">
               <small>SELA · COMPANY OS FIRST RUN</small>
-              <h2>Hi, I’m Sela. I’ll guide you through your first Company OS setup.</h2>
-              <p>Keep track of how your business runs customer work. Company OS has three layers: Company, Flow and Work.</p>
-              <div className="cos-space-story" aria-label="Company OS space map">
+              <h2>Hi, I’m Sela. I’ll guide you through your first Service OS setup.</h2>
+              <p>Keep track of how your business runs customer work. Service OS has three layers: Company, Flow and Work.</p>
+              <div className="cos-space-story" aria-label="Service OS space map">
                 {SPACE_STORY.map(({ icon: Icon, label, body }) => <article key={label}>
                   <Icon size={16}/><strong>{label}</strong><span>{body}</span>
                 </article>)}
